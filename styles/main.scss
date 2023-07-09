@@ -55,6 +55,19 @@ html {
         position: relative;
         overflow: hidden;
 
+        #cursor {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid $white-shade;
+            transition: transform 0.3s ease;
+            pointer-events: none;
+            z-index: 100;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
         .btn {
             @include btn-properties;
         }

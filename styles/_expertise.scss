@@ -70,6 +70,18 @@
                 transition: transform 0.5s ease;
                 position: relative;
                 overflow: hidden;
+                &.hidden {
+                    transform: translateX(100%);
+                }
+                &.show {
+                    transform: translateX(0);
+                }
+                &.hidden:nth-child(even) {
+                    transform: translateX(-100%);
+                }
+                &.show:nth-child(even) {
+                    transform: translateX(0);
+                }
 
                 img {
                     width: 60%;

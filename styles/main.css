@@ -10,6 +10,7 @@
       -ms-user-select: none;
           user-select: none;
   color: #0a0a0a;
+  cursor: none !important;
 }
 *::-webkit-scrollbar {
   display: none;
@@ -55,7 +56,15 @@
 }
 .navbar ul li {
   padding: 0 2px;
-  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
   position: relative;
 }
@@ -110,7 +119,6 @@
     position: fixed;
     left: 20px;
     top: 20px;
-    cursor: pointer;
   }
   .menu span {
     position: absolute;
@@ -478,6 +486,22 @@
   position: relative;
   overflow: hidden;
 }
+.expertise-elements .worked-on .tech-list li.hidden {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.expertise-elements .worked-on .tech-list li.show {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.expertise-elements .worked-on .tech-list li.hidden:nth-child(even) {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.expertise-elements .worked-on .tech-list li.show:nth-child(even) {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
 .expertise-elements .worked-on .tech-list li img {
   width: 60%;
   height: 60%;
@@ -804,6 +828,21 @@ html body {
   position: relative;
   overflow: hidden;
 }
+html body #cursor {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #dadada;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  pointer-events: none;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 html body .btn {
   background-color: rgba(255, 255, 255, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -827,7 +866,6 @@ html body .btn {
   outline: none;
   font-size: 20px;
   font-weight: 500;
-  cursor: pointer;
   position: relative;
   overflow: hidden;
   -webkit-transition: -webkit-transform 0.5s ease;

@@ -119,3 +119,61 @@ const handleLoading = (event) => {
         event.target.parentNode.classList.remove("loading");
     }
 };
+
+// Mouse Interactions
+const cursor = document.getElementById("cursor");
+if (cursor) {
+    window.addEventListener("mousemove", (event) => {
+        cursor.style.left = event.clientX + "px";
+        cursor.style.top = event.clientY + "px";
+    });
+
+    const elementsSelectorList = [
+        ".navbar ul li",
+        ".btn",
+        ".menu",
+        "form input",
+        "form textarea",
+        ".worked-on .tech-list li",
+        ".project-card a img",
+    ];
+    elementsSelectorList.forEach((elementSelector) => {
+        document.querySelectorAll(elementSelector).forEach((element) => {
+            element.addEventListener("mouseenter", () => {
+                cursor.style.transform = "scale(1.5)";
+            });
+            element.addEventListener("mouseleave", () => {
+                cursor.style.transform = "scale(1)";
+            });
+        });
+    });
+
+    // Hide cursor in touch devices like - Smart Phones
+    if (window.matchMedia("(pointer:fine)").matches) {
+        cursor.style.display = "initial";
+    } else {
+        cursor.style.display = "none";
+    }
+}
+
+// Handle Form
+const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch("https://portfolio-messages.onrender.com/message", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            name: document.getElementById("name").value,
+            message: document.getElementById("message").value,
+        }),
+    })
+        .then((res) => res.json())
+        .then((data) => alert(data.message))
+        .catch(() => alert("Something went wrong!"));
+
+        document.getElementById("name").value = "";
+        document.getElementById("message").value = ""
+};
+document.getElementById("contact-form").onsubmit = handleSubmit;
