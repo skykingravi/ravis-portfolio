@@ -136,6 +136,7 @@ if (cursor) {
         "form textarea",
         ".worked-on .tech-list li",
         ".project-card a img",
+        ".social-list li",
     ];
     elementsSelectorList.forEach((elementSelector) => {
         document.querySelectorAll(elementSelector).forEach((element) => {
@@ -170,8 +171,8 @@ const handleSubmit = (event) => {
         }),
     })
         .then((res) => res.json())
-        .then((data) => alert(data.message))
-        .catch(() => alert("Something went wrong!"));
+        .then((data) => console.log(data.message))
+        .catch(() => console.error("Something went wrong!"));
 
         document.getElementById("name").value = "";
         document.getElementById("message").value = ""

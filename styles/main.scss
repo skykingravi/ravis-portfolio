@@ -64,22 +64,20 @@ html {
             pointer-events: none;
             z-index: 100;
             position: absolute;
-            top: 0;
-            left: 0;
+            top: -20px;
+            left: -20px;
+            translate: -50% -50%;
         }
 
         .btn {
             @include btn-properties;
         }
         .pages-wrapper {
-            // padding-top: 60px;
             width: calc(5 * 100vw);
             height: calc(100vh - 70px);
             top: 70px;
             overflow: hidden;
             left: 0;
-            // overflow: hidden;
-            // background-color: var(--main-clr);
             display: flex;
             justify-content: start;
             align-items: start;
