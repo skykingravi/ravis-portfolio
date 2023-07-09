@@ -300,20 +300,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   position: relative;
   overflow: hidden;
-}
-#home .home-elements #about .social-list li.hidden {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-}
-#home .home-elements #about .social-list li.show {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
 }
 #home .home-elements #about .social-list li.hidden:nth-child(2) {
   -webkit-transition-delay: 150ms;
@@ -582,24 +570,24 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: -webkit-transform 0.5s ease;
-  transition: -webkit-transform 0.5s ease;
-  transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
   position: relative;
   overflow: hidden;
 }
-.expertise-elements .worked-on .tech-list li.hidden {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+.expertise-elements .worked-on .tech-list li .hidden {
+  opacity: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
-.expertise-elements .worked-on .tech-list li.show {
+.expertise-elements .worked-on .tech-list li .show {
+  opacity: 1;
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 .expertise-elements .worked-on .tech-list li.hidden:nth-child(even) {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 .expertise-elements .worked-on .tech-list li.show:nth-child(even) {
   -webkit-transform: translateX(0);
@@ -803,18 +791,14 @@
 
 .hidden {
   opacity: 0;
-  -webkit-filter: blur(6px);
-          filter: blur(6px);
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  -webkit-transition: all 0.8s ease;
-  transition: all 0.8s ease;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 
 .show {
   opacity: 1;
-  -webkit-filter: blur(0);
-          filter: blur(0);
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }

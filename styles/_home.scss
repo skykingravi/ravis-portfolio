@@ -105,15 +105,8 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    transition: transform 0.5s ease;
                     position: relative;
                     overflow: hidden;
-                    &.hidden {
-                        transform: translateX(-100%);
-                    }
-                    &.show {
-                        transform: translateX(0);
-                    }
                     &.hidden:nth-child(2) {
                         transition-delay: 150ms;
                     }

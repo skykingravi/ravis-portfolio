@@ -67,17 +67,19 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: transform 0.5s ease;
                 position: relative;
                 overflow: hidden;
-                &.hidden {
-                    transform: translateX(100%);
+                .hidden {
+                    opacity: 0;
+                    transform: translateX(-100%);
+                    transition: all 0.6s ease;
                 }
-                &.show {
+                .show {
+                    opacity: 1;
                     transform: translateX(0);
                 }
                 &.hidden:nth-child(even) {
-                    transform: translateX(-100%);
+                    transform: translateX(100%);
                 }
                 &.show:nth-child(even) {
                     transform: translateX(0);
