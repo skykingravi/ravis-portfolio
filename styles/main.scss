@@ -1,0 +1,83 @@
+@import "colors";
+@import "default";
+@import "mixins";
+@import "navbar";
+@import "home";
+@import "projects";
+@import "expertise";
+@import "education";
+@import "contact";
+@import "animation";
+
+:root {
+    scroll-behavior: smooth;
+}
+html {
+    &.home {
+        background-color: $home-clr-1;
+        background: $home-gradient;
+    }
+    &.projects {
+        background-color: $projects-clr-1;
+        background: $projects-gradient;
+    }
+    &.expertise {
+        background-color: $expertise-clr-1;
+        background: $expertise-gradient;
+    }
+    &.education {
+        background-color: $education-clr-1;
+        background: $education-gradient;
+    }
+    &.contact {
+        background-color: $contact-clr-1;
+        background: $contact-gradient;
+    }
+    &::before {
+        left: 0;
+        top: 0;
+        position: fixed;
+        content: "";
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        opacity: 40%;
+        filter: url(#grainy);
+    }
+    background: var(--main-clr);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    body {
+        width: 100vw !important;
+        height: 100vh !important;
+        position: relative;
+        overflow: hidden;
+
+        .btn {
+            @include btn-properties;
+        }
+        .pages-wrapper {
+            // padding-top: 60px;
+            width: calc(5 * 100vw);
+            height: calc(100vh - 70px);
+            top: 70px;
+            overflow: hidden;
+            left: 0;
+            // overflow: hidden;
+            // background-color: var(--main-clr);
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            position: absolute;
+            transition: left 0.5s ease, background-color 0.5s ease;
+            @media screen and (max-width: 800px) {
+                top: 50px;
+            }
+            .page {
+                @include page-default;
+            }
+        }
+    }
+}

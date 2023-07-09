@@ -1,0 +1,53 @@
+.contact-elements {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    position: absolute;
+    top: 0;
+    padding: 10px 20px 20px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    form {
+        padding: 20px;
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        @include glass-effect;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 400px;
+        .form-box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+
+            label {
+                font-size: 18px;
+                width: 100%;
+                text-align: center;
+                font-weight: 500;
+            }
+            input, textarea {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                font-size: 20px;
+                border: none;
+                outline: none;
+                border-radius: 10px;
+            }
+            textarea {
+                resize: none;
+            }
+        }
+    }
+}

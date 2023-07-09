@@ -1,0 +1,108 @@
+.navbar {
+    width: 100vw;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 10px 0;
+    z-index: 10;
+
+    .menu {
+        display: none;
+    }
+
+    ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+        gap: 40px;
+        font-size: 20px;
+        font-weight: 500;
+        align-items: center;
+        list-style: none;
+        @include glass-effect;
+
+        li {
+            padding: 0 2px;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            &::before {
+                width: 100%;
+                height: 40%;
+                content: "";
+                position: absolute;
+                background-color: $white-shade;
+                bottom: 0;
+                z-index: -1;
+                left: -100%;
+                transition: left 0.5s ease;
+            }
+            &:hover::before {
+                left: 0;
+            }
+            &.active::before {
+                left: 0;
+            }
+        }
+    }
+    @media screen and (max-width: 800px) {
+        & {
+            &.hide-nav {
+                visibility: hidden;
+            }
+             ul {
+                width: calc(100vw - 20px);
+                height: calc(100vh - 20px);
+                flex-direction: column;
+                background-color: $bg-white-4;
+                padding: 50px;
+                padding-top: 100px;
+                overflow: hidden scroll;
+                gap: 20px;
+                font-size: 24px;
+                li {
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .menu {
+        display: initial;
+        width: 40px;
+        height: 40px;
+        z-index: 30;
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        cursor: pointer;
+
+        span {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: $black-shade;
+            transform-origin: center center;
+            transition: transform 0.5s ease;
+            border-radius: 2.5px;
+        }
+        span:last-child {
+            top: 20px;
+        }
+        &.close {
+            span {
+                transform: translateY(14px) rotateZ(45deg);
+            }
+            span:last-child {
+                transform: translateY(-6px) rotateZ(-45deg);
+            }
+        }
+    }    
+}

@@ -1,0 +1,35 @@
+$black-shade: #0a0a0a;
+$white-shade: #dadada;
+$reflection: #ffffff;
+
+$bg-white-1: rgba(255, 255, 255, 0.1);
+$bg-white-2: rgba(255, 255, 255, 0.25);
+$bg-white-3: rgba(255, 255, 255, 0.3);
+$bg-white-4: rgba(255, 255, 255, 0.92);
+
+$shadow: rgba(0, 0, 0, 0.25);
+
+$home-clr-1: #10516d;
+$home-clr-2: #06f0f3;
+
+$projects-clr-1: #452694;
+$projects-clr-2: #ba95e0;
+
+$expertise-clr-1: #156a37;
+$expertise-clr-2: #28f387;
+
+$education-clr-1: #ff6d00;
+$education-clr-2: #ebc2a2;
+
+$contact-clr-1: #ac223c;
+$contact-clr-2: #ea8295;
+
+$home-gradient: linear-gradient(to bottom, $home-clr-1 0%, $home-clr-2 100%);
+
+$projects-gradient: linear-gradient(to bottom, $projects-clr-1 0%, $projects-clr-2 100%);
+
+$expertise-gradient: linear-gradient(to bottom, $expertise-clr-1 0%, $expertise-clr-2 100%);
+
+$education-gradient: linear-gradient(to bottom, $education-clr-1 0%, $education-clr-2 100%);
+
+$contact-gradient: linear-gradient(to bottom, $contact-clr-1 0%, $contact-clr-2 100%);

@@ -1,0 +1,49 @@
+.education-elements {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    position: absolute;
+    top: 0;
+    padding: 10px 20px 20px;
+    left: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .card {
+        @include glass-effect;
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        overflow: hidden;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        flex-direction: column;
+        text-align: center;
+        &.hidden:nth-child(even) {
+            transform: translateX(100%);
+        }
+        &.show:nth-child(even) {
+            transform: translateX(0);
+        }
+        .year {
+            font-size: 14px;
+            font-weight: 300;
+        }
+        .heading {
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .text {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .sub-text {
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+}
